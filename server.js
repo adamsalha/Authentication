@@ -7,8 +7,11 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
 
+mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost:27017/FYP', {
+mongoose.set('strictQuery', false);
+
+mongoose.connect('mongodb+srv://adamsalha01:adam123@cluster0.lnlymmc.mongodb.net/FYP', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }, (err) => {
